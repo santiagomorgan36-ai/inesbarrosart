@@ -185,6 +185,15 @@ ul { list-style: none; }
 @media (max-width: 900px) {
     .collection-block { flex-direction: column !important; gap: 30px; }
     .collection-info { flex: auto; text-align: center; }
+    .carousel-container, 
+    .gallery-grid-small { 
+        flex: none !important; 
+        width: 100%; 
+    }
+    .gallery-grid-small .gallery-item {
+        aspect-ratio: 4/5; 
+        /* O alternativamente: min-height: 350px; */
+    }
     .gallery-masonry { grid-template-columns: 1fr; grid-auto-rows: 300px; }
     .gallery-item.large, .gallery-item.vertical { grid-column: span 1; grid-row: span 1; }
     .gallery-grid-small { grid-template-columns: 1fr; }

@@ -184,24 +184,38 @@ ul { list-style: none; }
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
     .collection-block { flex-direction: column !important; gap: 30px; }
-    .collection-info { flex: auto; text-align: center; }
-    .carousel-container, 
+    .collection-info { flex: auto !important; text-align: center; }
+    
+    /* 1. BLINDAJE CONTRA SAFARI: Forzamos la estructura en bloque y una altura estricta inamovible */
+    .carousel-container { 
+        display: block !important; 
+        flex: none !important;
+        width: 100% !important; 
+        height: 480px !important; /* Forzamos la altura del contenedor */
+    }
     .gallery-grid-small { 
-        flex: none !important; 
-        width: 100%; 
+        display: block !important; /* Desactiva la malla grid en móvil previniendo bugs de altura */
+        flex: none !important;
+        width: 100% !important; 
     }
+    
     .gallery-grid-small .gallery-item {
-        aspect-ratio: 4/5; 
-        /* O alternativamente: min-height: 350px; */
+        min-height: 380px !important; 
+        height: 380px !important;
+        margin-bottom: 20px;
     }
+    /* 2. PROTECCIÓN DEL SCRIPT: Obligamos a que NUNCA sean transparentes en el móvil */
+    .fade-in-up {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    /* Resto de estilos de móvil... */
     .gallery-masonry { grid-template-columns: 1fr; grid-auto-rows: 300px; }
     .gallery-item.large, .gallery-item.vertical { grid-column: span 1; grid-row: span 1; }
-    .gallery-grid-small { grid-template-columns: 1fr; }
     .modal-body { flex-direction: column; }
     .modal-img-container img { height: 40vh; }
     .modal-info { padding: 40px 30px; }
 }
-
 @media (max-width: 768px) {
     .about-container, .about-container.reverse { flex-direction: column; text-align: center; }
     .about-text { margin-bottom: 30px; }

@@ -94,7 +94,7 @@
                         <p style="font-size: 0.9rem; margin-top: 15px;">Colecciones "Océano" y "Arenas de Sal".</p>
                     </div>
                     <div class="carousel-container">
-                        <button class="carousel-btn carousel-prev" onclick="scrollCarousel(-1)">&#10094;</button>
+                        <button class="carousel-btn carousel-prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
                         <div class="carousel-track" id="obras-carousel">
                             <div class="gallery-item carousel-item"
                                 onclick="openModal('Resplandor Tríptico', 'assets/tripticoresplandor.jpg', 'Colección Arenas de Sal', 'Medidas: 80 x 60 cm. Precio: 130 €')">
@@ -258,7 +258,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-btn carousel-next" onclick="scrollCarousel(1)">&#10095;</button>
+                        <button class="carousel-btn carousel-next" onclick="scrollCarousel(this, 1)">&#10095;</button>
                     </div>
                 </div>
 
@@ -269,63 +269,67 @@
                         <p>Formatos pequeños (aprox. 27x23 cm) ideales para crear composiciones de "Dúo Minis". Tonos
                             inspirados en la calma del mar y la arena.</p>
                     </div>
-                    <div class="gallery-grid-small">
-                        <div class="gallery-item"
+                    <div class="carousel-container">
+                        <button class="carousel-btn carousel-prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+                        <div class="carousel-track" id="minis-carousel">
+                        <div class="gallery-item carousel-item"
                             onclick="openModal('Horizonte de Sal', 'assets/horizontedesal.jpg', 'Obra Mini', '28 x 24 x 4,5 cm | Precio: 65 €')">
                             <img src="assets/horizontedesal.jpg" alt="Horizonte de Sal">
                             <div class="gallery-overlay">
                                 <h4>Horizonte de Sal</h4>
                             </div>
                         </div>
-                        <div class="gallery-item"
+                        <div class="gallery-item carousel-item"
                             onclick="openModal('Oleaje', 'assets/oleaje.jpg', 'Obra Mini', '27 x 21 x 4 cm | Precio: 65 €')">
                             <img src="assets/oleaje.jpg" alt="Oleaje">
                             <div class="gallery-overlay">
                                 <h4>Oleaje</h4>
                             </div>
                         </div>
-                        <div class="gallery-item"
+                        <div class="gallery-item carousel-item"
                             onclick="openModal('Profundidad', 'assets/profundidadmini.jpg', 'Obra Mini', '27 x 23 x 4 cm | Precio: 65 €')">
                             <img src="assets/profundidadmini.jpg" alt="Profundidad">
                             <div class="gallery-overlay">
                                 <h4>Profundidad</h4>
                             </div>
                         </div>
-                        <div class="gallery-item"
+                        <div class="gallery-item carousel-item"
                             onclick="openModal('Mareas', 'assets/mareasmini.jpg', 'Obra Mini', '33 x 23 x 4,5 cm | Precio: 69 €')">
                             <img src="assets/mareasmini.jpg" alt="Mareas">
                             <div class="gallery-overlay">
                                 <h4>Mareas</h4>
                             </div>
                         </div>
-                        <div class="gallery-item"
+                        <div class="gallery-item carousel-item"
                             onclick="openModal('Reflejos de Calma', 'assets/reflejosdecalma.jpg', 'Obra Mini', '27,5 x 23 x 4,5 cm | Precio: 65 €')">
                             <img src="assets/reflejosdecalma.jpg" alt="Reflejos de Calma">
                             <div class="gallery-overlay">
                                 <h4>Reflejos de Calma</h4>
                             </div>
                         </div>
-                        <div class="gallery-item"
+                        <div class="gallery-item carousel-item"
                             onclick="openModal('Atardecer', 'assets/atardecermini.jpg', 'Obra Mini', '27,5 x 23 x 4,5 cm | Precio: 65 €')">
                             <img src="assets/atardecermini.jpg" alt="Atardecer">
                             <div class="gallery-overlay">
                                 <h4>Atardecer</h4>
                             </div>
                         </div>
-                        <div class="gallery-item"
+                        <div class="gallery-item carousel-item"
                             onclick="openModal('Dúo Minis', 'assets/duominis1.jpg', 'Dúo Minis', 'Dúo Minis (Combinadas): 119 €')">
                             <img src="assets/duominis1.jpg" alt="Dúo Minis">
                             <div class="gallery-overlay">
                                 <h4>Dúo Minis</h4>
                             </div>
                         </div>
-                        <div class="gallery-item"
+                        <div class="gallery-item carousel-item"
                             onclick="openModal('Dúo Minis', 'assets/duominis2.jpg', 'Dúo Minis', 'Dúo Minis (Combinadas): 119 €')">
                             <img src="assets/duominis2.jpg" alt="Dúo Minis">
                             <div class="gallery-overlay">
                                 <h4>Dúo Minis</h4>
                             </div>
                         </div>
+                        </div>
+                        <button class="carousel-btn carousel-next" onclick="scrollCarousel(this, 1)">&#10095;</button>
                     </div>
                 </div>
             </div>
@@ -346,7 +350,9 @@
                         <li>✔️ Guía de materiales y comunidad de artistas.</li>
                     </ul>
                     <br>
-                    <a href="https://wa.me/34616679621" target="_blank" class="btn btn-outline" style="margin-top: 10px;">¡Reserva tu plaza! (70€)</a>
+                    <a href="https://wa.me/34616679621" target="_blank" class="btn btn-outline"
+                        style="margin-top: 10px;">¡Reserva
+                        tu plaza! (70€)</a>
                 </div>
                 <div class="about-image">
                     <img src="assets/talleres.jpg" alt="Taller de arte y vino">

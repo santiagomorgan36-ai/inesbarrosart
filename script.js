@@ -96,14 +96,13 @@ document.addEventListener('keydown', (e) => {
 });
 
 // 6. Carousel Logic
-function scrollCarousel(direction) {
-    const track = document.getElementById('obras-carousel');
+function scrollCarousel(btn, direction) {
+    const container = btn.closest('.carousel-container');
+    const track = container ? container.querySelector('.carousel-track') : null;
     if (track) {
-        // Calculate the width of one item + gap (20px)
         const itemElement = track.querySelector('.carousel-item');
         if (itemElement) {
             const itemWidth = itemElement.offsetWidth + 20;
-            // Scroll by two items if on desktop, or one item if on mobile
             const scrollAmount = window.innerWidth > 768 ? itemWidth * 2 : itemWidth;
             track.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
         }
